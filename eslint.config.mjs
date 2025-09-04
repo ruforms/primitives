@@ -9,10 +9,10 @@ import globals from 'globals'
 export default [
   js.configs.recommended,
   {
-    files: ['**/*.{ts,tsx}'],
-    {
     ignores: ['src/scripts/**/*.cjs'],
-    },
+  },
+  {
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
       globals: {
         ...globals.browser,
@@ -30,7 +30,7 @@ export default [
     },
     plugins: {
       '@typescript-eslint': tseslint,
-      'react': reactPlugin,
+      react: reactPlugin,
       'react-hooks': reactHooks,
     },
     settings: {
