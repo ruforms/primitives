@@ -29,7 +29,7 @@
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist",
     "prepublishOnly": "pnpm build",
-    "prepare": "husky .git/hooks",
+    "prepare": "husky",
     "pre-commit": "lint-staged",
     "pre-push": "pnpm type-check && pnpm lint",
     "commitlint": "commitlint",
