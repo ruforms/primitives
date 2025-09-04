@@ -1,4 +1,4 @@
 // Example component
-export const ExampleComponent = () => {
-  return <div>Hello from primitives!</div>;
-};
+export const ExampleComponents = () => {
+  return <div>Hello from primitives!</div>
+}
