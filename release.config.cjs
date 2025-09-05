@@ -54,7 +54,12 @@ module.exports = {
         prepareCmd: 'node scripts/resolve-workspace-deps.cjs',
       },
     ],
-    '@semantic-release/npm',
+    [
+      '@semantic-release/npm',
+      {
+        npmPublish: false,
+      },
+    ],
     [
       '@semantic-release/git',
       {
