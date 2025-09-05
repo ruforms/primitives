@@ -1,5 +1,6 @@
 module.exports = {
-  branches: ['release'],
+  branches: ['main'],
+  initialReleaseVersion: '0.0.1',
   tagFormat: 'v${version}',
   repositoryUrl: 'https://github.com/ruforms/primitives',
   plugins: [
@@ -11,12 +12,12 @@ module.exports = {
           // Alpha development: only patch releases
           { type: 'feat', release: 'patch' },
           { type: 'fix', release: 'patch' },
-          { type: 'docs', release: false },      // Don't release for docs
-          { type: 'style', release: false },     // Don't release for style
+          { type: 'docs', release: false }, // Don't release for docs
+          { type: 'style', release: false }, // Don't release for style
           { type: 'refactor', release: 'patch' },
           { type: 'perf', release: 'patch' },
-          { type: 'test', release: false },      // Don't release for tests
-          { type: 'chore', release: false },     // Don't release for chore
+          { type: 'test', release: false }, // Don't release for tests
+          { type: 'chore', release: false }, // Don't release for chore
           { type: 'ci', release: false },
           // Force breaking changes to be patch during alpha
           { breaking: true, release: 'patch' },
@@ -34,6 +35,8 @@ module.exports = {
           groupBy: 'type',
           commitGroupsSort: 'title',
           commitsSort: ['scope', 'subject'],
+          commitPartial:
+            '- {{header}} ([{{shortHash}}]({{host}}/{{owner}}/{{repository}}/commit/{{hash}})){{#if references}} {{#each references}}([{{prefix}}{{issue}}]({{../host}}/{{../owner}}/{{../repository}}/pull/{{issue}})){{/each}}{{/if}}\n',
         },
       },
     ],
@@ -41,21 +44,23 @@ module.exports = {
       '@semantic-release/changelog',
       {
         changelogFile: 'CHANGELOG.md',
-        changelogTitle: '# Changelog\n\nAll notable changes to this project will be documented in this file.',
+        changelogTitle:
+          '# Changelog\n\nAll notable changes to this project will be documented in this file.',
       },
     ],
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'node src/scripts/resolve-workspace-deps.cjs',
+        prepareCmd: 'node scripts/resolve-workspace-deps.cjs',
       },
     ],
     '@semantic-release/npm',
     [
       '@semantic-release/git',
       {
-        assets: ['CHANGELOG.md'], // Don't commit package.json changes
-        message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
+        assets: ['CHANGELOG.md'],
+        message:
+          'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
     [

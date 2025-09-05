@@ -9,7 +9,7 @@ import globals from 'globals'
 export default [
   js.configs.recommended,
   {
-    ignores: ['src/scripts/**/*.cjs'],
+    ignores: ['scripts/**/*.cjs'],
   },
   {
     files: ['**/*.{ts,tsx}'],
