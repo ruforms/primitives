@@ -72,8 +72,8 @@ module.exports = {
       '@semantic-release/github',
       {
         draft: false,
-        successComment: false,
-        failComment: false,
+        successCommentCondition: false, // disables success comments
+        failCommentCondition: false, // disables fail comments
       },
     ],
   ],
