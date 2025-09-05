@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.4](https://github.com/ruforms/primitives/compare/v0.0.3...v0.0.4) (2025-09-05)
+
+### Features
+
+- feat: npm publish test ([f92a731](///commit/f92a731e465c8bd86549d27af5303dcde56b03c5))
+
 ## [0.0.3](https://github.com/ruforms/primitives/compare/v0.0.2...v0.0.3) (2025-09-05)
 
 ### Features
