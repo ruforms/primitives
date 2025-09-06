@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.5
+
+### Patch Changes
+
+- [`cee2eed`](https://github.com/ruforms/workspace/commit/cee2eedc58c22a6743d9e9345a2a81b18aee573c) Thanks [@mertafor](https://github.com/mertafor)! - test
+
+- [`0cbf4cb`](https://github.com/ruforms/workspace/commit/0cbf4cbbf08baf9535a03c6e8cc3d760fbfb061a) Thanks [@mertafor](https://github.com/mertafor)! - test
+
 ## 0.0.4
 
 ### Patch Changes
