@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.4
+
+### Patch Changes
+
+- [`64d05aa`](https://github.com/ruforms/workspace/commit/64d05aad0dc13403681bc43a3660c58b3788be0e) Thanks [@mertafor](https://github.com/mertafor)! - testing
+
 All notable changes to this project will be documented in this file.
 
 ## [0.0.3](https://github.com/ruforms/primitives/compare/v0.0.2...v0.0.3) (2025-09-05)
