@@ -1,4 +1,4 @@
-import js from '@eslint/js'
+import reactLibraryConfig from '@ruforms/eslint-config/react-library'
 import tseslint from '@typescript-eslint/eslint-plugin'
 import tsparser from '@typescript-eslint/parser'
 import reactPlugin from 'eslint-plugin-react'
@@ -6,10 +6,12 @@ import reactHooks from 'eslint-plugin-react-hooks'
 import prettier from 'eslint-config-prettier'
 import globals from 'globals'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
-  js.configs.recommended,
+  ...reactLibraryConfig,
+  // Add any rules SPECIFIC to this package here
   {
-    ignores: ['scripts/**/*.cjs'],
+    ignores: ['dist/**', 'node_modules/**'],
   },
   {
     files: ['**/*.{ts,tsx}'],
