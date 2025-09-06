@@ -1,6 +1,6 @@
 # @ruforms/primitives
 
-primitives for RuForms..
+primitives for RuForms
 
 ## Installation
 
