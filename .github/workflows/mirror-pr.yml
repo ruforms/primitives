@@ -8,6 +8,15 @@ jobs:
   mirror:
     runs-on: ubuntu-latest
     steps:
+      - name: Generate token
+        id: generate_token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.BOT_APP_ID }}
+          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          owner: ${{ github.repository_owner }}
+          repositories: ${{ github.event.repository.name }},workspace
+
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
@@ -18,7 +27,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           # A PAT with repo scope for a bot user that has write access to the private repo
-          token: ${{ secrets.BOT_PAT }}
+          token: ${{ steps.generate_token.outputs.token }}
           # The private monorepo where the new PR will be created
           repository: ruforms/workspace
           # The branch in the private monorepo to base the new PR on
@@ -30,14 +39,14 @@ jobs:
           # The body of the new PR
           body: |
             ## Mirrored Pull Request
-            
+
             **Original PR:** [${{ github.repository }}#${{ github.event.pull_request.number }}](${{ github.event.pull_request.html_url }})
             **Author:** @${{ github.event.pull_request.user.login }}
-            
+
             ---
-            
+
             ${{ github.event.pull_request.body }}
-          
+
           # The path within the private monorepo where the files should be placed
           path: libs/${{ github.event.repository.name }}
 
@@ -45,7 +54,7 @@ jobs:
         uses: peter-evans/create-or-update-comment@v4
         with:
           # A PAT with repo scope for the bot user
-          token: ${{ secrets.BOT_PAT }}
+          token: ${{ steps.generate_token.outputs.token }}
           issue-number: ${{ github.event.pull_request.number }}
           body: |
             👋 Thank you for your contribution, @${{ github.event.pull_request.user.login }}!
