@@ -52,7 +52,6 @@
     "eslint-config-prettier": "^9.1.0",
     "@ruforms/tsconfig": "workspace:*",
     "@ruforms/eslint-config": "workspace:*",
-    "@ruforms/prettier-config": "workspace:*",
     "prettier": "^3.3.0",
     "globals": "^16.3.0",
     "@types/node": "^24.3.0"
