@@ -12,8 +12,8 @@ jobs:
         id: generate_token
         uses: actions/create-github-app-token@v1
         with:
-          app-id: ${{ secrets.BOT_APP_ID }}
-          private-key: ${{ secrets.BOT_PRIVATE_KEY }}
+          app-id: ${{ secrets.PR_BOT_APP_ID }}
+          private-key: ${{ secrets.PR_BOT_PRIVATE_KEY }}
           owner: ${{ github.repository_owner }}
           repositories: ${{ github.event.repository.name }},workspace
 
@@ -35,7 +35,7 @@ jobs:
           # The name for the new branch in the private monorepo
           branch: contrib/${{ github.repository_owner }}-${{ github.event.pull_request.number }}
           # The title for the new PR in the private monorepo
-          title: 'Contrib: Mirror PR from ${{ github.repository }}#${{ github.event.pull_request.number }}'
+          title: "Contrib: Mirror PR from ${{ github.repository }}#${{ github.event.pull_request.number }}"
           # The body of the new PR
           body: |
             ## Mirrored Pull Request
