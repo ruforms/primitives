@@ -1,6 +1,6 @@
 # @ruforms/primitives
 
-primitives for RuForms....
+primitives for RuForms.
 
 ## Installation
 
@@ -11,10 +11,10 @@ pnpm add @ruforms/primitives
 ## Usage
 
 ```tsx
-import { ExampleComponent } from '@ruforms/primitives'
+import { ExampleComponent } from "@ruforms/primitives";
 
 function App() {
-  return <ExampleComponent />
+  return <ExampleComponent />;
 }
 ```
 
