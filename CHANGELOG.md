@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.12
+
+### Patch Changes
+
+- [`55e9732`](https://github.com/ruforms/workspace/commit/55e973234e0d56032aab50ca0ea1280125ed3fb7) Thanks [@mertafor](https://github.com/mertafor)! - test
+
 ## 0.0.11
 
 ### Patch Changes
